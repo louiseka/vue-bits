@@ -1,0 +1,25 @@
+@import "./variables.css";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--white);
+  color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
