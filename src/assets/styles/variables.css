@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  /* Colours */
+  --black: #18191a;
+  --white: #fbfcf8;
+  --turquoise: #2ec4b6;
+  --light-turquoise: #ddf4f0;
+  --pink: #f08080;
+  --light-pink: #ffe6e5;
+  --warm-yellow: #ffbf69;
+
+  /* Typography */
+  --body-font: "Nunito", sans-serif;
+
+  /* Borders */
+  --dashed-border: 2px dashed var(--black);
+  --solid-thin-border: 1px solid var(--black);
+  --solid-normal-border: 2px solid var(--black);
+
+  /* Border Radius */
+  --sm-border-radius: 10px;
+  --md-border-radius: 20px;
+  --mixed-border-radius: 30px 30px 0 0;
+}
