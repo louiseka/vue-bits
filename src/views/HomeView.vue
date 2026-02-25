@@ -1,3 +1,3 @@
 <script setup></script>
-<template><h1>This is the Home page</h1></template>
+<template><h2>Home</h2></template>
 <style scoped></style>
