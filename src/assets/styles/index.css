@@ -12,8 +12,10 @@ html {
 
 body {
   font-family: var(--body-font);
-  background-color: var(--white);
+  background-color: var(--light-yellow);
   color: var(--black);
+  margin: 0 auto;
+  max-width: 1500px;
 }
 
 h1,
@@ -22,4 +24,15 @@ h3,
 h4,
 p {
   margin: 0;
+}
+
+h1 {
+  font-weight: var(--font-medium);
+  font-size: var(--font-lg);
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: var(--font-xl);
+  }
 }

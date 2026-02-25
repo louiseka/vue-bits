@@ -9,9 +9,19 @@
   --pink: #f08080;
   --light-pink: #ffe6e5;
   --warm-yellow: #ffbf69;
+  --light-yellow: #fff3e3;
 
   /* Typography */
   --body-font: "Nunito", sans-serif;
+
+  /* Font Sizes */
+  --font-sm: 1.25rem;
+  --font-lg: 3rem;
+  --font-xl: 4rem;
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-medium: 500;
 
   /* Borders */
   --dashed-border: 2px dashed var(--black);
