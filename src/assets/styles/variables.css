@@ -16,6 +16,7 @@
 
   /* Font Sizes */
   --font-sm: 1.25rem;
+  --font-md: 1.5rem;
   --font-lg: 3rem;
   --font-xl: 4rem;
 
@@ -26,7 +27,7 @@
   /* Borders */
   --dashed-border: 2px dashed var(--black);
   --solid-thin-border: 1px solid var(--black);
-  --solid-normal-border: 2px solid var(--black);
+  --solid-normal-border: 1.5px solid var(--black);
 
   /* Border Radius */
   --sm-border-radius: 10px;
