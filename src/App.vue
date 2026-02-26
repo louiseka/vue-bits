@@ -1,7 +1,9 @@
 <script setup>
-import { RouterView } from "vue-router";
+import { RouterView, useRoute } from "vue-router";
 import Header from "@/components/Header.vue";
 import Navigation from "@/components/Navigation.vue";
+
+const route = useRoute();
 </script>
 
 <template>
@@ -10,7 +12,9 @@ import Navigation from "@/components/Navigation.vue";
     <div class="container">
       <Navigation></Navigation>
       <div class="demo">
-        <h2 class="demo__heading">Get Started</h2>
+        <h2 class="demo__heading">
+          {{ route.name === "Home" ? "Get Started" : route.name }}
+        </h2>
         <div class="demo__inner">
           <RouterView></RouterView>
         </div>
@@ -37,9 +41,10 @@ import Navigation from "@/components/Navigation.vue";
 }
 
 .demo__inner {
-  background-color: var(--white);
+  background-color: #fff9f1;
   margin: 1.5em;
-  min-height: 550px;
+  min-height: 300px;
+  height: auto;
   border-radius: var(--md-border-radius);
   border: var(--dashed-border);
 }
@@ -50,7 +55,7 @@ import Navigation from "@/components/Navigation.vue";
   margin: 0.8em 1.5em;
   background-color: var(--pink);
   border: var(--solid-thin-border);
-  border-radius: var(--sm-border-radius);
+  border-radius: var(--mixed-border-radius);
   width: auto;
   font-weight: var(--font-medium);
 }
