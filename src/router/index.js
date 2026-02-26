@@ -6,12 +6,12 @@ import CounterView from "@/views/CounterView.vue";
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "Home",
     component: HomeView,
   },
   {
     path: "/counter",
-    name: "counter",
+    name: "Counter",
     component: CounterView,
   },
 ];
