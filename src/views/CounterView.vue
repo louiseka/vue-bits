@@ -72,11 +72,11 @@ function decrement() {
 }
 
 .button--increase {
-  background-color: #ffcc8a;
+  background-color: var(--faded-yellow);
 }
 
 .button--decrease {
-  background-color: #6bd0c4;
+  background-color: var(--faded-turquoise);
 }
 
 @media (min-width: 475px) {
