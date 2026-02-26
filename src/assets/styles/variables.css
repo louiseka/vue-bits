@@ -5,10 +5,12 @@
   --black: #18191a;
   --white: #fbfcf8;
   --turquoise: #2ec4b6;
+  --faded-turquoise: #6bd0c4;
   --light-turquoise: #ddf4f0;
   --pink: #f08080;
   --light-pink: #ffe6e5;
   --warm-yellow: #ffbf69;
+  --faded-yellow: #ffcc8a;
   --light-yellow: #fff3e3;
 
   /* Typography */
@@ -23,6 +25,7 @@
   /* Font Weights */
   --font-light: 300;
   --font-medium: 500;
+  --font-bold: 700;
 
   /* Borders */
   --dashed-border: 2px dashed var(--black);
