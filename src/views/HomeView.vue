@@ -6,5 +6,6 @@
 .home__text {
   font-size: var(--font-md);
   text-align: center;
+  margin: 0 0.5em;
 }
 </style>
