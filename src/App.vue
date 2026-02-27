@@ -41,6 +41,9 @@ const route = useRoute();
 }
 
 .demo__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff9f1;
   margin: 1.5em;
   min-height: 300px;
