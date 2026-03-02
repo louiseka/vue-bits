@@ -29,6 +29,7 @@
 
   /* Borders */
   --dashed-border: 2px dashed var(--black);
+  --thin-dashed-border: 1px dashed var(--black);
   --solid-thin-border: 1px solid var(--black);
   --solid-normal-border: 1.5px solid var(--black);
 
