@@ -56,7 +56,7 @@ import { RouterLink } from "vue-router";
   padding: 0;
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1.5em;
 }
 .nav__links li {
@@ -84,10 +84,6 @@ import { RouterLink } from "vue-router";
     width: 20%;
     min-height: 600px;
     margin: 3em 0;
-  }
-
-  .nav__links {
-    flex-direction: column;
   }
 }
 </style>

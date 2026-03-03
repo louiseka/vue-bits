@@ -43,6 +43,7 @@ a {
 button {
   cursor: pointer;
   font-family: var(--body-font);
+  color: var(--black);
 }
 
 .button:disabled {
