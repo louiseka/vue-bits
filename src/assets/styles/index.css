@@ -18,6 +18,8 @@ body {
   max-width: 1500px;
 }
 
+/* Typography */
+
 h1,
 h2,
 h3,
@@ -30,6 +32,8 @@ h1 {
   font-weight: var(--font-medium);
   font-size: var(--font-lg);
 }
+
+/* Buttons and Links */
 
 a {
   text-decoration: none;
@@ -46,12 +50,23 @@ button {
   opacity: 0.5;
 }
 
+/* Forms */
 fieldset {
   border: none;
   margin: 0;
   padding: 0;
 }
 
+/* Links, Buttons, Inputs focus */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--turquoise);
+}
+
+/* Images */
 .icon {
   width: 16px;
 }

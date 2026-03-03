@@ -17,11 +17,13 @@
   --body-font: "Nunito", sans-serif;
 
   /* Font Sizes */
+  --font-xs: 0.8rem;
   --font-default: 1rem;
   --font-sm: 1.25rem;
   --font-md: 1.5rem;
   --font-lg: 3rem;
   --font-xl: 4rem;
+  --font-label: 1.1rem;
 
   /* Font Weights */
   --font-light: 300;

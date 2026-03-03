@@ -15,15 +15,28 @@ const previewStyle = computed(() => {
   };
 });
 </script>
+
 <template>
   <section class="text-styler">
+    <h2 class="text-styler__heading">Style your text</h2>
     <form>
-      <fieldset class="text__fieldset">
-        <label class="text-styler__label" for="text">Enter your text:</label>
-        <input v-model="previewText" id="text" name="text" type="text" />
+      <fieldset class="text-styler__fieldset--text">
+        <label class="text-styler__label" for="text"
+          >Enter your text:
+          <span class="text-styler__instructions"
+            >(Max 50 Characters)</span
+          ></label
+        >
+        <input
+          v-model="previewText"
+          id="text"
+          name="text"
+          type="text"
+          maxlength="50"
+        />
       </fieldset>
 
-      <fieldset class="select__fieldset">
+      <fieldset class="text-styler__fieldset--select">
         <label class="text-styler__label" for="color-select"
           >Choose your text colour:
         </label>
@@ -35,7 +48,7 @@ const previewStyle = computed(() => {
         </select>
       </fieldset>
 
-      <fieldset class="checkbox__fieldset">
+      <fieldset>
         <legend class="text-styler__label">Choose your font style</legend>
         <input
           v-model="checkedStyle"
@@ -67,13 +80,14 @@ const previewStyle = computed(() => {
     </form>
 
     <div>
-      <h2>Preview your styled text</h2>
-      <p :style="previewStyle" class="preview">
+      <h2 class="text-styler__preview--heading">Preview your styled text</h2>
+      <p :style="previewStyle" class="text-styler__preview" aria-live="polite">
         {{ previewText }}
       </p>
     </div>
   </section>
 </template>
+
 <style scoped>
 .text-styler {
   display: flex;
@@ -83,24 +97,44 @@ const previewStyle = computed(() => {
   margin: 0.5em;
 }
 
+/* Headings */
+
 h2 {
   font-weight: var(--font-medium);
-  padding: 1em 0 0.5em;
+  font-size: var(--font-sm);
+}
+.text-styler__heading {
+  margin: 0.5em 0 0;
 }
 
-.text__fieldset,
-.select__fieldset {
+.text-styler__preview--heading {
+  margin: 1em 0 0.5em;
+}
+
+/* Fieldsets, Inputs, and Labelss */
+
+.text-styler__fieldset--text,
+.text-styler__fieldset--select {
   display: flex;
   flex-direction: column;
 }
 
 .text-styler__label {
-  font-size: 1.1rem;
+  font-size: var(--font-label);
   padding: 1em 0 0.5em;
 }
 
-.text__fieldset input,
-.select__fieldset select {
+.text-styler__instructions {
+  font-size: var(--font-xs);
+}
+
+.text-styler__label--checkbox {
+  font-size: var(--body-font);
+  padding: 0 0.5em 0 0.25em;
+}
+
+.text-styler__fieldset--text input,
+.text-styler__fieldset--select select {
   padding: 1em;
   font-family: var(--body-font);
   border-radius: var(--sm-border-radius);
@@ -111,13 +145,23 @@ h2 {
 input[type="checkbox"] {
   transform: scale(1.5);
   margin-right: 0.5em;
+  accent-color: var(--pink);
 }
 
-.preview {
+/* Text preview section */
+
+.text-styler__preview {
   min-height: 60px;
   padding: 1em;
   margin: 0 0 1em;
   border: var(--thin-dashed-border);
   border-radius: var(--sm-border-radius);
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 700px) {
+  h2 {
+    font-size: var(--font-md);
+  }
 }
 </style>
