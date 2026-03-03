@@ -17,6 +17,14 @@ import { RouterLink } from "vue-router";
             >Counter</RouterLink
           >
         </li>
+        <li>
+          <RouterLink
+            class="nav__link"
+            activeClass="active__link"
+            to="/text-styler"
+            >Text Styler</RouterLink
+          >
+        </li>
       </ul>
     </nav>
   </div>

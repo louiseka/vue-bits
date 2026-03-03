@@ -17,10 +17,13 @@
   --body-font: "Nunito", sans-serif;
 
   /* Font Sizes */
+  --font-xs: 0.8rem;
+  --font-default: 1rem;
   --font-sm: 1.25rem;
   --font-md: 1.5rem;
   --font-lg: 3rem;
   --font-xl: 4rem;
+  --font-label: 1.1rem;
 
   /* Font Weights */
   --font-light: 300;
@@ -29,6 +32,7 @@
 
   /* Borders */
   --dashed-border: 2px dashed var(--black);
+  --thin-dashed-border: 1px dashed var(--black);
   --solid-thin-border: 1px solid var(--black);
   --solid-normal-border: 1.5px solid var(--black);
 
