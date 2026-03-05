@@ -1,10 +1,27 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { ref } from "vue";
+
+const navOpen = ref(false);
+
+function toggleNav() {
+  console.log("button clicked");
+  navOpen.value = !navOpen.value;
+}
 </script>
 
 <template>
   <div class="nav__container">
-    <h2 class="nav__heading">Vue Demos</h2>
+    <div class="nav__heading">
+      <h2>Vue Demos</h2>
+      <button
+        class="nav__button"
+        @click="toggleNav"
+        aria-label="Toggle navigation menu"
+      >
+        <img class="icon" src="@/assets/icons/chevron-down.svg" alt="" />
+      </button>
+    </div>
     <nav>
       <ul class="nav__links">
         <li>
@@ -42,7 +59,16 @@ import { RouterLink } from "vue-router";
   border: var(--solid-normal-border);
 }
 
+.nav__button {
+  display: inline-flex;
+  border-radius: var(--sm-border-radius);
+  border: var(--solid-thin-border);
+}
+
 .nav__heading {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
   margin: 0.8em 1em 1em;
   padding: 0.5em 0;
   background-color: var(--turquoise);
