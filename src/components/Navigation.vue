@@ -137,5 +137,6 @@ function toggleNav() {
   .nav__button {
     display: none;
   }
+
 }
 </style>
