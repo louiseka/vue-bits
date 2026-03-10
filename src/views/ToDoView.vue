@@ -17,7 +17,7 @@ function removeToDo(toDo) {
 </script>
 <template>
   <section class="todo">
-    <h3 class="todo__heading">Add a Task</h3>
+    <h2 class="todo__heading">Add a Task</h2>
     <form class="todo__form" @submit.prevent="addToDo">
       <input
         class="todo__input"
@@ -30,7 +30,7 @@ function removeToDo(toDo) {
       <button class="todo__add-button" type="submit">Add</button>
     </form>
     <div v-if="toDos.length > 0">
-      <h3 class="todo__heading">Tasks To Do</h3>
+      <h2 class="todo__heading">Tasks To Do</h2>
       <ul class="todo__list">
         <li class="todo__list--item" v-for="toDo in toDos" :key="toDo.id">
           {{ toDo.text }}
@@ -53,6 +53,7 @@ function removeToDo(toDo) {
 .todo__heading {
   margin: 1em 0 0.5em;
   font-weight: var(--font-medium);
+  font-size: var(--font-sm);
 }
 
 /* Form */
@@ -108,5 +109,11 @@ function removeToDo(toDo) {
   background-color: var(--pink);
   display: inline-flex;
   padding: 0.5em 1em;
+}
+
+@media (min-width: 700px) {
+  .todo__heading {
+    font-size: var(--font-md);
+  }
 }
 </style>
