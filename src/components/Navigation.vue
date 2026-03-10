@@ -5,7 +5,6 @@ import { ref } from "vue";
 const navOpen = ref(false);
 
 function toggleNav() {
-  console.log("button clicked");
   navOpen.value = !navOpen.value;
 }
 </script>
@@ -18,11 +17,18 @@ function toggleNav() {
         class="nav__button"
         @click="toggleNav"
         aria-label="Toggle navigation menu"
+        :aria-expanded="navOpen"
+        aria-controls="main-nav"
       >
-        <img class="icon" src="@/assets/icons/chevron-down.svg" alt="" />
+        <img
+          class="icon"
+          :class="{ 'icon--open': navOpen }"
+          src="@/assets/icons/circle-arrow-down.svg"
+          alt=""
+        />
       </button>
     </div>
-    <nav>
+    <nav id="main-nav" v-show="navOpen">
       <ul class="nav__links">
         <li>
           <RouterLink class="nav__link" activeClass="active__link" to="/"
@@ -48,6 +54,7 @@ function toggleNav() {
 </template>
 
 <style scoped>
+/* Navigation Styling */
 .nav__container {
   text-align: center;
   background-color: var(--light-turquoise);
@@ -62,13 +69,14 @@ function toggleNav() {
 .nav__button {
   display: inline-flex;
   border-radius: var(--sm-border-radius);
-  border: var(--solid-thin-border);
+  border: none;
+  background-color: transparent;
 }
 
 .nav__heading {
   display: flex;
   justify-content: center;
-  gap: 1em;
+  gap: 0.5em;
   margin: 0.8em 1em 1em;
   padding: 0.5em 0;
   background-color: var(--turquoise);
@@ -82,7 +90,7 @@ function toggleNav() {
   padding: 0;
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1.5em;
 }
 .nav__links li {
@@ -105,15 +113,29 @@ function toggleNav() {
   border-radius: var(--sm-border-radius);
 }
 
+/* Icon Styling */
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.icon--open {
+  transform: rotate(180deg);
+}
+
 @media (min-width: 1400px) {
+  nav {
+    display: block !important;
+  }
+
   .nav__container {
     width: 20%;
     min-height: 600px;
     margin: 3em 0;
   }
 
-  .nav__links {
-    flex-direction: column;
+  .nav__button {
+    display: none;
   }
 }
 </style>
