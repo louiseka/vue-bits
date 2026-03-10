@@ -48,6 +48,14 @@ function toggleNav() {
             >Text Styler</RouterLink
           >
         </li>
+        <li>
+          <RouterLink
+            class="nav__link"
+            activeClass="active__link"
+            to="/todo-list"
+            >To-Do List</RouterLink
+          >
+        </li>
       </ul>
     </nav>
   </div>
@@ -137,6 +145,5 @@ function toggleNav() {
   .nav__button {
     display: none;
   }
-
 }
 </style>

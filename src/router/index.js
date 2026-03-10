@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import CounterView from "@/views/CounterView.vue";
 import TextStylerView from "@/views/TextStylerView.vue";
+import ToDoView from "@/views/ToDoView.vue";
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: "/text-styler",
     name: "Text Styler",
     component: TextStylerView,
+  },
+  {
+    path: "/todo-list",
+    name: "To-do List",
+    component: ToDoView,
   },
 ];
 
