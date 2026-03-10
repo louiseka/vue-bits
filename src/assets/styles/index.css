@@ -58,6 +58,10 @@ fieldset {
   padding: 0;
 }
 
+input {
+  font-family: var(--body-font);
+}
+
 /* Links, Buttons, Inputs focus */
 button:focus,
 a:focus,
