@@ -1,11 +1,34 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { ref } from "vue";
+
+const navOpen = ref(false);
+
+function toggleNav() {
+  navOpen.value = !navOpen.value;
+}
 </script>
 
 <template>
   <div class="nav__container">
-    <h2 class="nav__heading">Vue Demos</h2>
-    <nav>
+    <div class="nav__heading">
+      <h2>Vue Demos</h2>
+      <button
+        class="nav__button"
+        @click="toggleNav"
+        aria-label="Toggle navigation menu"
+        :aria-expanded="navOpen"
+        aria-controls="main-nav"
+      >
+        <img
+          class="icon"
+          :class="{ 'icon--open': navOpen }"
+          src="@/assets/icons/circle-arrow-down.svg"
+          alt=""
+        />
+      </button>
+    </div>
+    <nav id="main-nav" v-show="navOpen">
       <ul class="nav__links">
         <li>
           <RouterLink class="nav__link" activeClass="active__link" to="/"
@@ -31,6 +54,7 @@ import { RouterLink } from "vue-router";
 </template>
 
 <style scoped>
+/* Navigation Styling */
 .nav__container {
   text-align: center;
   background-color: var(--light-turquoise);
@@ -42,7 +66,17 @@ import { RouterLink } from "vue-router";
   border: var(--solid-normal-border);
 }
 
+.nav__button {
+  display: inline-flex;
+  border-radius: var(--sm-border-radius);
+  border: none;
+  background-color: transparent;
+}
+
 .nav__heading {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
   margin: 0.8em 1em 1em;
   padding: 0.5em 0;
   background-color: var(--turquoise);
@@ -79,11 +113,30 @@ import { RouterLink } from "vue-router";
   border-radius: var(--sm-border-radius);
 }
 
+/* Icon Styling */
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.icon--open {
+  transform: rotate(180deg);
+}
+
 @media (min-width: 1400px) {
+  nav {
+    display: block !important;
+  }
+
   .nav__container {
     width: 20%;
     min-height: 600px;
     margin: 3em 0;
   }
+
+  .nav__button {
+    display: none;
+  }
+
 }
 </style>
