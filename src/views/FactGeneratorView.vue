@@ -21,6 +21,7 @@ watch(
       <p>{{ factData }}</p>
     </div>
     <button class="facts__button" @click="trigger++">Generate a Fact</button>
+    <p class="facts__stats">(You've generated {{ trigger }} cat facts)</p>
   </section>
 </template>
 <style scoped>
@@ -40,6 +41,7 @@ watch(
 
 .facts__text {
   text-align: center;
+  min-height: 200px;
 }
 
 .facts__button {
@@ -49,6 +51,10 @@ watch(
   background-color: var(--faded-yellow);
   font-size: var(--font-default);
   margin: 1em 0;
+}
+
+.facts__stats {
+  font-size: var(--font-xs);
 }
 
 @media (min-width: 700px) {
