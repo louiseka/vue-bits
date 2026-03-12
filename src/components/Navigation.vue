@@ -56,6 +56,14 @@ function toggleNav() {
             >To-Do List</RouterLink
           >
         </li>
+        <li>
+          <RouterLink
+            class="nav__link"
+            activeClass="active__link"
+            to="/fact-generator"
+            >Fact Generator</RouterLink
+          >
+        </li>
       </ul>
     </nav>
   </div>

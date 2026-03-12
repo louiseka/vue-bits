@@ -4,6 +4,7 @@ import HomeView from "@/views/HomeView.vue";
 import CounterView from "@/views/CounterView.vue";
 import TextStylerView from "@/views/TextStylerView.vue";
 import ToDoView from "@/views/ToDoView.vue";
+import FactGeneratorView from "@/views/FactGeneratorView.vue";
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: "/todo-list",
     name: "To-do List",
     component: ToDoView,
+  },
+  {
+    path: "/fact-generator",
+    name: "Fact Generator",
+    component: FactGeneratorView,
   },
 ];
 
