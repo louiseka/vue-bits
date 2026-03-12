@@ -65,6 +65,7 @@ const route = useRoute();
 @media (min-width: 1400px) {
   .container {
     flex-direction: row;
+    margin: 2em;
   }
 
   .demo {

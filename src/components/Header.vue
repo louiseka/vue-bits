@@ -13,7 +13,7 @@
 
 <style scoped>
 .header {
-  margin: 1em;
+  margin: 2em 1em 1em;
 }
 
 .header__text {
@@ -27,7 +27,7 @@
 
   @media (min-width: 1400px) {
     .header {
-      margin: 1em 0;
+      margin: 2em;
     }
   }
 }

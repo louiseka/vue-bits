@@ -41,7 +41,7 @@ watch(
 
 .facts__text {
   text-align: center;
-  min-height: 200px;
+  min-height: 250px;
 }
 
 .facts__button {
@@ -60,6 +60,9 @@ watch(
 @media (min-width: 700px) {
   .facts__heading {
     font-size: var(--font-md);
+  }
+  .facts__text {
+    min-height: 200px;
   }
 }
 </style>
