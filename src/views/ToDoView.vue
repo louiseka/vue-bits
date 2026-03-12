@@ -1,13 +1,18 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 let id = 0;
 
 const newToDo = ref("");
 const toDos = ref([]);
+const hideCompleted = ref(false);
+
+const filteredToDos = computed(() => {
+  return hideCompleted.value ? toDos.value.filter((t) => !t.done) : toDos.value;
+});
 
 function addToDo() {
-  toDos.value.push({ id: id++, text: newToDo.value });
+  toDos.value.push({ id: id++, text: newToDo.value, done: false });
   newToDo.value = "";
 }
 
@@ -32,14 +37,23 @@ function removeToDo(toDo) {
     <div v-if="toDos.length > 0">
       <h2 class="todo__heading">Tasks To Do</h2>
       <ul class="todo__list">
-        <li class="todo__list--item" v-for="toDo in toDos" :key="toDo.id">
-          {{ toDo.text }}
-          <span
-            ><button class="todo__delete-button" @click="removeToDo(toDo)">
-              <img class="todo__icon" src="@/assets/icons/x.svg" /></button
-          ></span>
+        <li
+          class="todo__list--item"
+          v-for="toDo in filteredToDos"
+          :key="toDo.id"
+        >
+          <span :class="{ done: toDo.done }">
+            <input type="checkbox" v-model="toDo.done" />
+            {{ toDo.text }}
+          </span>
+          <button class="todo__delete-button" @click="removeToDo(toDo)">
+            <img class="todo__icon" src="@/assets/icons/x.svg" />
+          </button>
         </li>
       </ul>
+      <button class="todo__hide-button" @click="hideCompleted = !hideCompleted">
+        {{ hideCompleted ? "Show Completed Tasks" : "Hide Completed Tasks" }}
+      </button>
     </div>
   </section>
 </template>
@@ -74,6 +88,10 @@ function removeToDo(toDo) {
 
 /* List styling */
 
+.done {
+  text-decoration: line-through;
+}
+
 .todo__list {
   border: var(--thin-dashed-border);
   border-radius: var(--sm-border-radius);
@@ -88,16 +106,24 @@ function removeToDo(toDo) {
   border-bottom: var(--thin-dashed-border);
 }
 
-/* Button styling */
-.todo__add-button,
-.todo__delete-button {
-  border: var(--solid-thin-border);
-  border-radius: var(--sm-border-radius);
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 0.5em;
+  accent-color: var(--pink);
 }
 
-.todo__add-button {
-  background-color: var(--faded-yellow);
+/* Button styling */
+.todo__add-button,
+.todo__delete-button,
+.todo__hide-button {
+  border: var(--solid-thin-border);
+  border-radius: var(--sm-border-radius);
   padding: 0.5em 1em;
+}
+
+.todo__add-button,
+.todo__hide-button {
+  background-color: var(--faded-yellow);
   font-size: var(--font-default);
 }
 
@@ -108,7 +134,10 @@ function removeToDo(toDo) {
 .todo__delete-button {
   background-color: var(--pink);
   display: inline-flex;
-  padding: 0.5em 1em;
+}
+
+.todo__hide-button {
+  margin: 1em 0;
 }
 
 @media (min-width: 700px) {
