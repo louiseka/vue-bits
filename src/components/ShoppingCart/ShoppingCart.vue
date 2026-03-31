@@ -1,5 +1,5 @@
 <script setup></script>
 <template>
-  <p>Product Item child</p>
+  <p>This is the shopping cart child</p>
 </template>
 <style scoped></style>
