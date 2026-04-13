@@ -64,6 +64,14 @@ function toggleNav() {
             >Fact Generator</RouterLink
           >
         </li>
+        <li>
+          <RouterLink
+            class="nav__link"
+            activeClass="active__link"
+            to="/shopping-cart"
+            >Shopping Cart</RouterLink
+          >
+        </li>
       </ul>
     </nav>
   </div>

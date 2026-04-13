@@ -5,6 +5,7 @@ import CounterView from "@/views/CounterView.vue";
 import TextStylerView from "@/views/TextStylerView.vue";
 import ToDoView from "@/views/ToDoView.vue";
 import FactGeneratorView from "@/views/FactGeneratorView.vue";
+import ShoppingCartView from "@/views/ShoppingCartView.vue";
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: "/fact-generator",
     name: "Fact Generator",
     component: FactGeneratorView,
+  },
+  {
+    path: "/shopping-cart",
+    name: "Shopping Cart",
+    component: ShoppingCartView,
   },
 ];
 
