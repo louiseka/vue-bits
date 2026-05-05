@@ -1,6 +1,15 @@
 # Vue Bits
 
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
 Vue Bits is a personal playground for experimenting with Vue.js. This repository contains a collection of small projects and reusable components designed to explore and demonstrate core Vue concepts in a practical, hands-on way.
+
+## Live Site
+Visit the live site: [https://vue-bits.netlify.app/](https://vue-bits.netlify.app/)
 
 ## Purpose
 
