@@ -40,7 +40,7 @@ This repository includes examples and experiments with:
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/vue-bits.git
+git clone https://github.com/louiseka/vue-bits.git
 cd vue-bits
 
 Install dependencies:
